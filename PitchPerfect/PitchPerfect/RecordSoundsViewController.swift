@@ -34,7 +34,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     //Sets screen's initial state
     override func viewWillAppear(_ animated: Bool) {
-        
+        print("teste")
         super.viewWillAppear(animated)
         configureScreen(initialState: true)
     }
