@@ -20,12 +20,14 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var reverbButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     
+    
     // MARK: - Other properties
     var recordedAudioURL: URL!
     var audioFile: AVAudioFile!
     var audioEngine: AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer: Timer!
+    
     
     // MARK: - Enums
     
@@ -39,6 +41,7 @@ class PlaySoundsViewController: UIViewController {
         reverb
     }
 
+    
     // MARK: - Controller Overrides
     
     //Initial audio setup
@@ -50,14 +53,17 @@ class PlaySoundsViewController: UIViewController {
     
     //Configure UI to it's initial state
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         configureUI(.notPlaying)
     }
 
+    
     // MARK: - Action functions
     
     //Plays audio file
     @IBAction func playSoundForButton(_ sender: UIButton) {
+        
         switch(ButtonType(rawValue: sender.tag)!) {
         case .slow:
             playSound(rate: 0.5)
@@ -78,6 +84,7 @@ class PlaySoundsViewController: UIViewController {
     
     //Stops audio reproduction
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
+        
         stopAudio()
     }
 
